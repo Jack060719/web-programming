@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 段落與文字排版範例</title>
+  <style>
+    /* 1. text-align (文字水平對齊) 與 letter-spacing (字元間距) */
+    h1 {
+      text-align: center;    /* 標題置中對齊 */
+      letter-spacing: 5px;   /* 每個字元之間增加 5px 的間距 */
+    }
+
+    /* 2. text-indent (段落縮排) 與 line-height (行高) */
+    .article {
+      text-indent: 32px;     /* 段落第一行向內縮排 32px（約兩個中文字寬度） */
+      line-height: 2;        /* 行高設為字體大小的 2 倍（若字高 16px，行高即為 32px） */
+      text-align: justify;   /* 左右均分對齊（讓段落左右兩側邊緣齊平） */
+    }
+    /* 3. text-decoration (文字效果) */
+    .del-text {
+      text-decoration: line-through; /* 加上刪除線 */
+    }
+    .under-text {
+      text-decoration: underline;    /* 加上底線 */
+    }
+    /* 4. text-transform (英文字母大小寫轉換) */
+    .eng-upper {
+      text-transform: uppercase;     /* 將所有英文字母強制轉為大寫 */
+    }
+    .eng-cap {
+      text-transform: capitalize;    /* 將每個英文單字的首字母轉為大寫 */
+    }
+  </style>
+</head>
+<body>
+  <h1>網頁文字排版示範</h1>
+  <p class="article">
+    這是一段用來測試段落縮排與行高的示範文字。透過設定 text-indent，第一行會自動空出兩個字的距離；透過設定 line-height 為 2，行與行之間會有舒適的閱讀空間。
+  </p>
+  <p>
+    特價優惠：<span class="del-text">原價 1000 元</span>，現在只要 <span class="under-text">500 元</span>！
+  </p>
+  <p class="eng-upper">hello world (全部轉大寫)</p>
+  <p class="eng-cap">welcome to css design (單字首字大寫)</p>
+
+</body>
+</html>

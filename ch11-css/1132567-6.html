@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 背景圖案屬性範例</title>
+  <style>
+    /* 1. 分開設定各項背景屬性（對應表格中的四項屬性） */
+    body {
+      background-image: url("images/bg04.gif"); /* 設定背景圖案路徑（支援 jpg、gif、png） */
+      background-repeat: repeat-x;              /* 背景圖案僅在「水平方向」重複排列（若要垂直用 repeat-y，不重複可用 no-repeat） */
+      background-attachment: fixed;             /* 捲動網頁捲軸時，背景圖案固定在畫面上不動（預設隨捲軸移動為 scroll） */
+      background-position: right top;           /* 設定背景圖案位置在「右上角」（也可用像素如 50px 100px 指定 x y 距離） */
+      height: 1500px;                           /* 刻意拉高頁面高度，方便測試捲動捲軸時背景 fixed 的固定效果 */
+    }
+
+    /* 2. 簡寫方式範例（對應圖片最下方綠框語法） */
+    .box {
+      width: 300px;
+      height: 200px;
+      border: 1px solid #333;
+      /* 將 background-image 與 background-attachment 合併簡寫為一行 */
+      background: url("images/bg04.gif") fixed;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS 背景圖案設定測試</h1>
+  <p>請試著上下捲動網頁捲軸，觀察背景圖片固定不動（fixed）的效果。</p>
+
+  <div class="box">
+    這個區塊套用了簡寫語法：background: url(images/bg04.gif) fixed;
+  </div>
+
+</body>
+</html>

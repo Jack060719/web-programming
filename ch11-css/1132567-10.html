@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 定位與圖層重疊範例</title>
+  <style>
+    /* 外層黃色大框：設為 relative，當作裡面絕對定位方塊的「參考基準點」 */
+    .container {
+      position: relative;        /* 相對定位：作為子元素的定位參考框 */
+      width: 300px;
+      height: 220px;
+      background-color: #ffffcc; /* 淺黃色背景（對應圖片右上角底框） */
+      border: 1px solid #999;
+      margin: 20px;
+    }
+
+    /* 粉紅色方塊 (Layer 2) */
+    .layer2 {
+      position: absolute;        /* 絕對定位：相對於外層 .container 的左上角 */
+      top: 20px;                 /* 距離外框上方 20px */
+      left: 20px;                /* 距離外框左方 20px */
+      width: 140px;
+      height: 80px;
+      background-color: #ff99cc; /* 粉紅色 */
+      border: 2px solid #000;
+      z-index: 2;                /* 圖層順序：數字越大越在上面（蓋住 Layer 1） */
+    }
+
+    /* 綠色方塊 (Layer 1) */
+    .layer1 {
+      position: absolute;        /* 絕對定位 */
+      top: 70px;                 /* 距離外框上方 70px */
+      left: 90px;                /* 距離外框左方 90px */
+      width: 140px;
+      height: 80px;
+      background-color: #99cc00; /* 綠色 */
+      border: 2px solid #000;
+      z-index: 1;                /* 圖層順序：在 Layer 2 下方 */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="layer2">Layer 2 (z-index: 2)</div>
+    <div class="layer1">Layer 1 (z-index: 1)</div>
+  </div>
+
+</body>
+</html>

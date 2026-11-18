@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 文字與段落樣式範例</title>
+  <style>
+    /* 1. 設定整體字型與預設大小 */
+    body {
+      font-family: "Microsoft JhengHei", Arial, sans-serif; /* 設定字型1、字型2... */
+      font-size: 16px; /* 設定基準字體大小 */
+    }
+
+    /* 2. 測試 font-size 與 font-style (斜體) */
+    .p1 {
+      font-size: xx-large; /* 使用絕對大小 (極特大) */
+      font-style: italic;  /* 設定為斜體 */
+    }
+    /* 3. 測試 font-weight (字體粗細) */
+    .p2 {
+      font-weight: bold;   /* 設定為粗體 (相當於 700) */
+    }
+    /* 4. 測試 100~900 的數字粗細與 font-variant (字母大小寫) */
+    .p3 {
+      font-weight: 900;       /* 設定為最粗 (900) */
+      font-variant: small-caps; /* 將英文字母小寫轉成較小的「大寫字母」 */
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS 文字樣式測試</h1>
+  <p class="p1">這是字體大小設為 xx-large 且為 Italic (斜體) 的段落。</p>
+  <p class="p2">這是字體粗細設為 Bold (粗體) 的段落。</p>
+  <p class="p3">This is a test paragraph with font-weight 900 and small-caps.</p>
+</body>
+</html>

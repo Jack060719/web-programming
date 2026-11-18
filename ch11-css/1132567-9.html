@@ -1,0 +1,42 @@
+<!DOCTYPE html> <!-- 宣告文件類型為 HTML5 -->
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+<head>
+  <meta charset="UTF-8"> <!-- 設定網頁字元編碼為 UTF-8，支援中文顯示 -->
+  <title>CSS 文繞圖 (float 與 clear) 範例</title> <!-- 設定瀏覽器分頁標題 -->
+  <style>
+    /* 1. 模擬圖片區塊，設定 float: left 讓圖形靠左，文字自動在右側環繞 */
+    .img-box {
+      float: left;               /* 設定元素向左浮動，讓後續的文字自動環繞在右側 */
+      width: 100px;              /* 設定方塊寬度為 100 像素 */
+      height: 100px;             /* 設定方塊高度為 100 像素 */
+      background-color: #ff9900; /* 設定背景顏色為橘色，用來模擬圖片 */
+      margin-right: 15px;        /* 設定圖片右側外距留白，避免文字緊貼圖片 */
+      margin-bottom: 10px;       /* 設定圖片下方外距 */
+      text-align: center;        /* 文字水平置中 */
+      line-height: 100px;        /* 行高設為 100px，讓文字在垂直方向置中 */
+      color: white;              /* 文字顏色設為白色 */
+      font-weight: bold;         /* 文字設為粗體 */
+    }
+
+    /* 2. 設定 clear: both 清除文繞圖，強制此段落換到圖片下方顯示 */
+    .stop-float {
+      clear: both;               /* 清除左右兩側的 float 浮動設定，不再跟在圖片旁邊 */
+      background-color: #e6f7ff; /* 設定淺藍色背景 */
+      padding: 10px;             /* 設定內部邊界留白為 10 像素 */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="img-box">圖片區塊</div> <!-- 建立一個代表圖片的 div 區塊，套用 float: left 樣式 -->
+
+  <p>
+    這是一段設定了文繞圖效果的文字。因為上方的圖片區塊設定了 <strong>float: left</strong>，所以這段文字會自動排列在圖片的右邊，當文字長度超過圖片高度時，就會自動繞到圖片下方繼續排列。
+  </p>
+
+  <p class="stop-float">
+    這一段加上了 <strong>clear: both</strong>，它會清除前面的浮動設定，強制自己另起一行顯示在圖片正下方，不會受到上面圖片的影響。
+  </p>
+
+</body>
+</html>

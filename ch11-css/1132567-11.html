@@ -1,0 +1,24 @@
+<!DOCTYPE html> <!-- 宣告 HTML5 文件類型 -->
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+<head>
+  <meta charset="UTF-8"> <!-- 設定編碼為 UTF-8 -->
+  <title>CSS calc() 簡單範例</title> <!-- 設定網頁標題 -->
+  <style>
+    .box {
+      width: calc(100% - 80px); /* 區塊寬度 = 視窗總寬度 100% 減去 80px（減號前後必須有空格） */
+      margin: 20px auto;         /* 上下外距 20px，左右自動置中（讓左右各留白 40px） */
+      height: 100px;             /* 設定區塊高度 */
+      background-color: #ffe699; /* 淺黃色背景 */
+      border: 2px solid #d6b656; /* 外框線 */
+      padding: 15px;             /* 內部文字留白 */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    調整瀏覽器視窗大小試試看：這個方塊的寬度永遠比視窗少 80px。
+  </div>
+
+</body>
+</html>

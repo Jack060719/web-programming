@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS 選擇器範例</title>
+    <style>
+        /* 1. 元件選擇器：讓所有段落文字變成藍色 */
+        p {
+            color: blue;
+        }
+        /* 2. class 選擇器：設定醒目的背景顏色，可重複使用 */
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        /* 3. id 選擇器：設定網頁標題獨特的樣式，全頁唯一 */
+        #main-title {
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 使用 id 選擇器 -->
+    <h1 id="main-title">歡迎來到我的網頁</h1>
+    <!-- 使用元件選擇器 -->
+    <p>這是普通的段落文字（套用元件選擇器，顯示藍色）。</p>
+    <!-- 使用 class 選擇器 -->
+    <p class="highlight">這是一段特別強調的文字（同時套用元件選擇器與 class 選擇器）。</p>
+    <div class="highlight">這是一個區塊，也使用了相同的 class 樣式。</div>
+</body>
+</html>

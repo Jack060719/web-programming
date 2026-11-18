@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 字體單位 em 範例</title>
+  <style>
+    body {
+      font-size: 12px; /* 設定整個網頁（父元素）的基準字體大小為 12px */
+    }
+    h1 {
+      font-size: 2em;  /* em 為相對單位，會乘以父元素的字體大小：12px × 2 = 24px */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>這是 h1 標題（實際大小為 24px）</h1>
+  <p>這是一般段落文字（繼承 body 的大小，為 12px）。</p>
+
+</body>
+</html>
