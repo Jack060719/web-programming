@@ -2,32 +2,54 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>傅立葉畫圖機</title>
-  <!-- 空的圖示，避免瀏覽器請求不存在的 /favicon.ico 而在主控台出現 404 -->
-  <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>網頁程式設計</title>
+  <style>
+    :root { --bg: #f7f7f5; --card: #fff; --text: #222; --muted: #666; --line: #ddd; --accent: #2563eb; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #18181b; --card: #232327; --text: #eee; --muted: #aaa; --line: #3a3a40; --accent: #60a5fa; }
+    }
+    body { margin: 0; background: var(--bg); color: var(--text);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif; line-height: 1.6; }
+    main { max-width: 760px; margin: 0 auto; padding: 32px 16px; }
+    h1 { margin: 0 0 4px; }
+    .sub { color: var(--muted); margin: 0 0 32px; }
+    h2 { border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-top: 36px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 12px 0; }
+    .card h3 { margin: 0 0 8px; }
+    a { color: var(--accent); }
+    .dl { display: inline-block; margin-bottom: 8px; font-weight: bold; }
+    ol { margin: 0; padding-left: 1.5em; columns: 2; }
+    .empty { color: var(--muted); }
+  </style>
 </head>
 <body>
-  <main class="app">
-    <h1>傅立葉畫圖機</h1>
-    <canvas id="board" aria-label="繪圖畫布"></canvas>
-    <!-- 提示、圈數與滑桿範圍由 app.js 設定 -->
-    <p id="message" class="message"></p>
-    <div class="controls">
-      <label class="slider">
-        <span>圓圈數量：<output id="count-label"></output></span>
-        <input id="count" type="range" min="1" step="1" disabled>
-      </label>
-      <button id="clear" type="button">清除重畫</button>
-    </div>
-  </main>
+<main>
+  <h1>網頁程式設計</h1>
+  <p class="sub">課堂作業與作品</p>
 
-  <!-- 依相依順序載入：數學 → 軌跡 → 繪圖 → 輸入 → 主程式 -->
-  <script src="js/dft.js"></script>
-  <script src="js/path.js"></script>
-  <script src="js/render.js"></script>
-  <script src="js/input.js"></script>
-  <script src="js/app.js"></script>
+  <h2>作業</h2>
+
+  <div class="card">
+    <h3>第十一堂課：認識 CSS</h3>
+    <a class="dl" href="homework/ch11-css.zip" download>⬇ 下載全部（zip）</a>
+    <ol>
+      <li><a href="homework/ch11-css/1132567-1.html">CSS 選擇器</a></li>
+      <li><a href="homework/ch11-css/1132567-2.html">class 選擇器</a></li>
+      <li><a href="homework/ch11-css/1132567-3.html">em 單位</a></li>
+      <li><a href="homework/ch11-css/1132567-4.html">文字樣式</a></li>
+      <li><a href="homework/ch11-css/1132567-5.html">段落排版</a></li>
+      <li><a href="homework/ch11-css/1132567-6.html">背景圖案</a></li>
+      <li><a href="homework/ch11-css/1132567-7.html">邊框</a></li>
+      <li><a href="homework/ch11-css/1132567-8.html">上邊框</a></li>
+      <li><a href="homework/ch11-css/1132567-9.html">文繞圖</a></li>
+      <li><a href="homework/ch11-css/1132567-10.html">定位與 z-index</a></li>
+      <li><a href="homework/ch11-css/1132567-11.html">calc()</a></li>
+    </ol>
+  </div>
+
+  <h2>作品</h2>
+  <p class="empty">尚無作品。</p>
+</main>
 </body>
 </html>
