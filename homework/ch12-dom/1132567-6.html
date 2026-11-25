@@ -1,0 +1,27 @@
+<!DOCTYPE html> <!-- 宣告文件類型為 HTML5 -->
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+<head> <!-- 網頁標頭區開始 -->
+  <meta charset="UTF-8"> <!-- 設定編碼為 UTF-8 -->
+  <title>集合概念小例子</title> <!-- 設定分頁標題 -->
+  <style> /* 內部樣式表，會被收錄在 document.styleSheets 集合中 */
+    body { font-family: sans-serif; } /* 設定全頁字型 */
+  </style> <!-- 結束樣式表 -->
+</head> <!-- 網頁標頭區結束 -->
+<body> <!-- 網頁主要內容區開始 -->
+  <form id="f1"></form> <!-- 第一個表單（索引 0） -->
+  <form id="f2"></form> <!-- 第二個表單（索引 1） -->
+  <a href="https://example.com">範例連結</a> <!-- 超連結，會被收錄在 document.links -->
+  <button type="button" onclick="showInfo()">看集合數量</button> <!-- 點擊後執行 showInfo() -->
+  <p id="out"></p> <!-- 顯示結果的段落 -->
+
+  <script> /* 這段 script 也會被收錄在 document.scripts 集合中 */
+    function showInfo() { // 定義顯示集合數量的函式
+      document.getElementById("out").innerHTML = // 將統計結果寫入 #out 段落
+        "表單數量 (forms.length)：" + document.forms.length + "<br>" + // 顯示有幾個表單
+        "連結數量 (links.length)：" + document.links.length + "<br>" + // 顯示有幾個連結
+        "樣式表數量 (styleSheets.length)：" + document.styleSheets.length + "<br>" + // 顯示有幾個樣式表
+        "腳本數量 (scripts.length)：" + document.scripts.length; // 顯示有幾個 script 區塊
+    } // 結束 showInfo 函式
+  </script> <!-- 結束 script 區塊 -->
+</body> <!-- 網頁主要內容區結束 -->
+</html> <!-- 結束整份 HTML 文件 -->

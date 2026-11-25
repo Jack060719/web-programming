@@ -1,0 +1,32 @@
+<!DOCTYPE html> <!-- 宣告文件類型為 HTML5 -->
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+<head>
+  <meta charset="UTF-8"> <!-- 設定編碼為 UTF-8 -->
+  <title>修改物件的 CSS 樣式範例</title> <!-- 設定分頁標題 -->
+</head>
+<body>
+
+  <p id="demo">這是一段測試文字（點擊下方按鈕修改它的樣式）</p> <!-- 目標 HTML 物件，設定 id="demo" 方便 JS 抓取 -->
+
+  <button onclick="changeSingle()">1. 改單一屬性 (.style.color)</button> <!-- 按鈕 1：只改文字顏色 -->
+  <button onclick="changeCssText()">2. 改多種屬性 (.style.cssText)</button> <!-- 按鈕 2：一次改多種樣式 -->
+  <button onclick="changeAttr()">3. 用 setAttribute 修改</button> <!-- 按鈕 3：用 setAttribute 設定 style 屬性 -->
+
+  <script>
+    const box = document.getElementById("demo"); // 取得 id 為 demo 的 HTML 元素物件
+
+    function changeSingle() { // 定義函式：設定特定的 CSS 樣式
+      box.style.color = "red"; // 將文字顏色改為紅色
+    }
+
+    function changeCssText() { // 定義函式：使用 cssText 一次設定多種 CSS 樣式
+      box.style.cssText = "color: red; border: 1px solid blue; padding: 10px;"; // 一次寫入多組樣式字串
+    }
+
+    function changeAttr() { // 定義函式：使用 setAttribute 方法修改 style 屬性
+      box.setAttribute("style", "color: red; border: 1px solid blue; background-color: #ffffcc;"); // 直接設定整個 style 屬性值
+    }
+  </script>
+
+</body>
+</html>

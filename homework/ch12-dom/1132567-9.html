@@ -1,0 +1,44 @@
+<!DOCTYPE html> <!-- 宣告文件類型為 HTML5 -->
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+<head> <!-- 網頁標頭區開始 -->
+  <meta charset="UTF-8"> <!-- 設定網頁編碼為 UTF-8，避免中文亂碼 -->
+  <title>修改表格寬度與背景顏色範例</title> <!-- 設定瀏覽器分頁標題 -->
+  <script> // 開始撰寫 JavaScript 程式碼
+    function tableWidth(w) { // 定義修改表格寬度的函式，接收寬度字串參數 w（例如 "300px"）
+      let table = document.getElementById("myTable"); // 取得 id 為 myTable 的表格元素
+      table.style.width = w; // 修改表格的 CSS width 樣式屬性
+    } // 結束 tableWidth 函式
+
+    function setTableColor(col) { // 定義修改表格背景顏色的函式，接收顏色參數 col
+      let table = document.getElementById("myTable"); // 取得 id 為 myTable 的表格元素
+      table.style.backgroundColor = col; // 修改表格的 CSS backgroundColor 樣式屬性
+    } // 結束 setTableColor 函式
+  </script> <!-- 結束 JavaScript 區塊 -->
+</head> <!-- 網頁標頭區結束 -->
+<body> <!-- 網頁主要內容區開始 -->
+
+  <table id="myTable" border="1" style="width: 200px; background-color: #FFFFCC;"> <!-- 建立目標表格，設定 id="myTable" 與初始寬度、背景色 -->
+    <tr> <!-- 表格第一列開始 -->
+      <th>科目</th> <!-- 標題儲存格 1 -->
+      <th>分數</th> <!-- 標題儲存格 2 -->
+    </tr> <!-- 表格第一列結束 -->
+    <tr> <!-- 表格第二列開始 -->
+      <td>數學</td> <!-- 資料儲存格 1 -->
+      <td>95</td> <!-- 資料儲存格 2 -->
+    </tr> <!-- 表格第二列結束 -->
+    <tr> <!-- 表格第三列開始 -->
+      <td>英文</td> <!-- 資料儲存格 1 -->
+      <td>88</td> <!-- 資料儲存格 2 -->
+    </tr> <!-- 表格第三列結束 -->
+  </table> <!-- 結束表格 -->
+  <br> <!-- 換行 -->
+  <button type="button" onclick="tableWidth('200px')">寬度 200px</button> <!-- 按鈕 1：將表格寬度設為 200px -->
+  <button type="button" onclick="tableWidth('400px')">寬度 400px</button> <!-- 按鈕 2：將表格寬度設為 400px -->
+  <br><br> <!-- 換行兩次 -->
+
+  <button type="button" onclick="setTableColor('#FFCCCC')">背景淺紅</button> <!-- 按鈕 3：將表格背景設為淺紅色 -->
+  <button type="button" onclick="setTableColor('#CCFFCC')">背景淺綠</button> <!-- 按鈕 4：將表格背景設為淺綠色 -->
+  <button type="button" onclick="setTableColor('#CCE5FF')">背景淺藍</button> <!-- 按鈕 5：將表格背景設為淺藍色 -->
+
+</body> <!-- 網頁主要內容區結束 -->
+</html> <!-- 結束整份 HTML 文件 -->

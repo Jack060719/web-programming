@@ -1,0 +1,33 @@
+<!DOCTYPE html> <!-- 宣告文件類型為 HTML5 -->
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+<head> <!-- 網頁標頭區開始 -->
+  <meta charset="UTF-8"> <!-- 設定網頁編碼為 UTF-8，支援中文顯示 -->
+  <title>顯示文件內所有物件範例</title> <!-- 設定瀏覽器分頁標題 -->
+  <script> // 開始撰寫 JavaScript 程式碼
+  function showFormElements() { // 定義顯示文件內所有元素的函式
+      let all = document.getElementsByTagName("*"); // 取得整份文件中所有的 HTML 元素集合
+      let tagname = "目前文件內共有 " + all.length + " 個物件<br>"; // 組合總元素數量訊息字串
+      for (let i = 0; i < all.length; i++) { // 使用迴圈逐一走訪所有元素
+          tagname += all[i].tagName + "<br>"; // 將每個元素的標籤名稱串接並加上換行標籤
+      } // 結束 for 迴圈
+      let showDiv = document.getElementById("showDiv"); // 取得 id 為 showDiv 的區塊元素
+      showDiv.innerHTML = tagname; // 將整理好的標籤清單寫入 showDiv 區塊中顯示
+  } // 結束 showFormElements 函式
+  </script> <!-- 結束 JavaScript 區塊 -->
+</head> <!-- 網頁標頭區結束 -->
+<body> <!-- 網頁主要內容區開始 -->
+  <div style="float:left; height:500px; width:200px; border:1px solid #ccc; padding:8px;" id="showDiv">這是DIV</div> <!-- 左側浮動區塊，用來顯示所有物件名稱 -->
+  <table border="1"> <!-- 建立一個邊框為 1 的表格 -->
+    <tr> <!-- 表格第一列開始 -->
+      <td align="center"><b>這是表格</b></td> <!-- 儲存格內容置中並設為粗體 -->
+    </tr> <!-- 表格第一列結束 -->
+  </table> <!-- 結束表格 -->
+  <form> <!-- 建立表單區塊 -->
+    <input type="text" size="20" value="我是文字方塊"> <!-- 建立單行文字輸入框並設定預設值 -->
+    <br> <!-- 換行 -->
+    <img src="images/14.jpg" width="200" border="0" alt="範例圖片"> <!-- 插入圖片（若無該圖檔會顯示替代文字） -->
+    <br> <!-- 換行 -->
+    <input type="button" name="myButton" value="顯示所有物件" onclick="showFormElements()"> <!-- 建立按鈕，點擊時執行 showFormElements() 函式 -->
+  </form> <!-- 結束表單區塊 -->
+</body> <!-- 網頁主要內容區結束 -->
+</html> <!-- 結束整份 HTML 文件 -->

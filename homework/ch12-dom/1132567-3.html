@@ -1,0 +1,28 @@
+<!DOCTYPE html> <!-- 宣告文件類型為 HTML5 -->
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+<head> <!-- 網頁標頭區開始 -->
+  <meta charset="UTF-8"> <!-- 設定網頁編碼為 UTF-8 -->
+  <title>DOM 節點關係檢查範例</title> <!-- 設定瀏覽器分頁標題 -->
+  <script> <!-- 開始撰寫 JavaScript 程式碼 -->
+  function check() // 定義檢查節點關係的函式
+  { // 函式主體開始
+      let result = document.getElementById("result"); // 取得顯示結果的 textarea 元素
+      let d1 = document.getElementById("div1"); // 取得 id 為 div1 的區塊元素
+      let nextEl = d1.firstChild.nextElementSibling; // 取得第一個子節點之後的「下一個元素節點」（避免抓到換行文字節點）
+      result.value = "第一個子節點(firstChild)的nodeValue = " + d1.firstChild.nodeValue + "\n"; // 取得 div1 的第一個子節點文字內容（即 "Coffee"）
+      result.value += "第一個子節點(childNodes)的nodeValue = " + d1.childNodes.item(0).nodeValue + "\n"; // 透過 childNodes 索引 0 取得第一個子節點的文字內容
+      result.value += "最後一個子節點(lastChild)的nodeType = " + d1.lastChild.nodeType + "\n"; // 取得最後一個子節點的節點類型（3 代表文字節點）
+      result.value += "div1第一個子節點下一個元素(nextElementSibling) = " + (nextEl ? nextEl.getAttribute("id") : "無") + "\n"; // 安全取得下一個元素的 id，若不存在則顯示「無」
+      result.value += "a1的父節點(parentNode) = " + document.getElementById("a1").parentNode.getAttribute("id"); // 取得 a1 的父節點（即 div1）的 id
+  } // 函式主體結束
+  </script> <!-- 結束 JavaScript 區塊 -->
+</head> <!-- 網頁標頭區結束 -->
+<body> <!-- 網頁主要內容區開始 -->
+  <input type="button" value="檢查節點關係" onclick="check()"><br> <!-- 建立按鈕，點擊時觸發 check() 函式並換行 -->
+  <textarea cols="50" rows="9" id="result"></textarea> <!-- 建立多行文字方塊用來輸出結果 -->
+  <div id="div1">Coffee<a href="#" id="a1">這是a1</a> <!-- 建立 div1 區塊，包含文字 "Coffee" 與第一個超連結 a1 -->
+  <a href="#" id="a2">這是a2</a> <!-- 建立第二個超連結子元素 a2 -->
+  <a href="#" id="a3">這是a3</a> <!-- 建立第三個超連結子元素 a3 -->
+  </div> <!-- 結束 div1 區塊 -->
+</body> <!-- 網頁主要內容區結束 -->
+</html> <!-- 結束整份 HTML 文件 -->

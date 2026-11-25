@@ -1,0 +1,36 @@
+<!DOCTYPE html> <!-- 宣告文件類型為 HTML5 -->
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+<head> <!-- 網頁標頭區開始 -->
+  <meta charset="UTF-8"> <!-- 設定網頁編碼為 UTF-8，避免中文亂碼 -->
+  <title>修改表格屬性範例</title> <!-- 設定瀏覽器分頁標題 -->
+  <script> // 開始撰寫 JavaScript 程式碼
+  function changeBorderWidth(px) { // 定義修改表格邊框寬度的函式，接收參數 px
+      let showTable = document.getElementById("myTable"); // 取得 id 為 myTable 的表格元素
+      showTable.setAttribute("border", px); // 設定表格的 border 屬性值為傳入的 px
+      document.getElementById("showMessage").value = showTable.getAttribute("bgcolor"); }// 取得表格的 bgcolor 屬性值並顯示在輸入框中
+  </script> <!-- 結束 JavaScript 區塊 -->
+</head> <!-- 網頁標頭區結束 -->
+<body> <!-- 網頁主要內容區開始 -->
+  <input type="text" id="showMessage"><br><br> <!-- 建立單行文字輸入框用來顯示表格背景色屬性值，並換行 -->
+  <table id="myTable" width="200" cellspacing="2" cellpadding="2" border="1" bgcolor="#FFFF66"> <!-- 建立表格，設定寬度、間距、邊框與淺黃色背景 -->
+    <tr id="Tr1" bgcolor="#00ee00"> <!-- 第一列：標題列，設定綠色背景 -->
+      <td>數學</td> <!-- 第一欄儲存格 -->
+      <td>英文</td> <!-- 第二欄儲存格 -->
+      <td>國文</td> <!-- 第三欄儲存格 -->
+    </tr> <!-- 結束第一列 -->
+    <tr id="Tr2"> <!-- 第二列：第一組成績資料 -->
+      <td>90</td> <!-- 數學分數 -->
+      <td>60</td> <!-- 英文分數 -->
+      <td>80</td> <!-- 國文分數 -->
+    </tr> <!-- 結束第二列 -->
+    <tr id="Tr3"> <!-- 第三列：修正重複的 id，改為 Tr3 -->
+      <td>80</td> <!-- 數學分數 -->
+      <td>86</td> <!-- 英文分數 -->
+      <td>98</td> <!-- 國文分數 -->
+    </tr> <!-- 結束第三列 -->
+  </table><br> <!-- 結束表格並換行 -->
+  <button type="button" onclick="changeBorderWidth(1);">1px</button> <!-- 按鈕 1：點擊時將表格邊框設為 1px -->
+  <button type="button" onclick="changeBorderWidth(5);">5px</button> <!-- 按鈕 2：點擊時將表格邊框設為 5px -->
+  <button type="button" onclick="changeBorderWidth(10);">10px</button> <!-- 按鈕 3：點擊時將表格邊框設為 10px -->
+</body> <!-- 網頁主要內容區結束 -->
+</html> <!-- 結束整份 HTML 文件 -->
